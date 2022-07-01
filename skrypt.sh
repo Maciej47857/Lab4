@@ -35,3 +35,10 @@ echo log${j} $0 '--logs' $2 $DATE > "log${j}.txt"
 else
 :
 fi
+
+if [ "$1" = "--help" ]; then
+echo -e "--date \n--logs <number> \n--help"
+
+else
+:
+fi
