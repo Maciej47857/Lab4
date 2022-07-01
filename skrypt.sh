@@ -6,6 +6,8 @@ ourfilename=$0
 date=$1
 DATE=`date +%d.%m.%y`
 
+repository="https://github.com/Maciej47857/Lab4.git"
+
 if [ "$1" = "--date" ] || [ "$1" = "-d" ]; then
 echo $DATE		
 else
@@ -37,8 +39,23 @@ else
 fi
 
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-echo -e "--date \n--logs <number> \n--help"
+echo -e "--date -d \n--logs -l <number> \n--help -h"
 
+else
+:
+fi
+
+if [ "$1" = "--date" ] || [ "$1" = "-d" ]; then
+echo $DATE		
+else
+:
+fi
+
+if [ "$1" = "--init" ]; then
+
+git clone "$repository"
+PATH="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+echo $PATH			
 else
 :
 fi
