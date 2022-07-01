@@ -6,13 +6,13 @@ ourfilename=$0
 date=$1
 DATE=`date +%d.%m.%y`
 
-if [ "$1" = "--date" ]; then
+if [ "$1" = "--date" ] || [ "$1" = "-d" ]; then
 echo $DATE		
 else
 :
 fi
 
-if [ "$1" = "--logs" ] && [ -z "$2" ]; then
+if [ "$1" = "--logs" ] || [ "$1" = "-l" ] && [ -z "$2" ]; then
 for i in {1..100}
 						do
     							echo log${i} $0 '--date' $DATE > "log${i}.txt"
@@ -21,7 +21,7 @@ else
 :
 fi
 
-if [ "$1" = "--logs" ] && [ -n "$2" ]; then
+if [ "$1" = "--logs" ] || [ "$1" = "-l" ] && [ -n "$2" ]; then
 					
 j=1
 while [ $j -lt $2 ]
@@ -36,7 +36,7 @@ else
 :
 fi
 
-if [ "$1" = "--help" ]; then
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
 echo -e "--date \n--logs <number> \n--help"
 
 else
