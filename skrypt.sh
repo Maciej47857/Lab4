@@ -38,7 +38,7 @@ else
 fi
 
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-echo -e "--date -d \n--logs -l <number> \n--help -h"
+echo -e "--date -d \n--logs -l <number> \n--help -h \n --error -e <numer>"
 
 else
 :
