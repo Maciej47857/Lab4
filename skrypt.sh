@@ -58,3 +58,27 @@ echo $PATH
 else
 :
 fi
+
+if [ "$1" = "--error" ] || [ "$1" = "-e" ] && [ -n "$2" ]; then
+					
+k=1
+while [ $k -lt $2 ]
+do
+echo error${k} $0 '--logs' $2 $DATE > "error${k}"/"error${k}.txt"
+(( k ++))
+done
+echo error${k} $0 '--logs' $2 $DATE > "error${k}"/"error$kj}.txt"
+
+
+else
+:
+fi
+
+if [ "$1" = "--error" ] || [ "$1" = "-e" ] && [ -z "$2" ]; then
+for l in {1..100}
+						do
+    							echo error${l} $0 '--date' $DATE > "error${l}"/"error${l}.txt"
+						done					
+else
+:
+fi
