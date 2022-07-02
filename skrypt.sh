@@ -2,7 +2,6 @@
 
 
 ourfilename=$0
-
 date=$1
 DATE=`date +%d.%m.%y`
 
@@ -17,7 +16,7 @@ fi
 if [ "$1" = "--logs" ] || [ "$1" = "-l" ] && [ -z "$2" ]; then
 for i in {1..100}
 						do
-    							echo log${i} $0 '--date' $DATE > "log${i}.txt"
+    							echo log${i} $0 '--date' $DATE > "log${i}"/"log${i}.txt"
 						done					
 else
 :
@@ -54,8 +53,8 @@ fi
 if [ "$1" = "--init" ]; then
 
 git clone "$repository"
-PATH="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
-echo $PATH			
+PATH="$PATH:$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+echo $PATH		
 else
 :
 fi
